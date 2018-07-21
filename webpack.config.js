@@ -1,16 +1,15 @@
 let path = require('path');
 
-// noinspection WebpackConfigHighlighting
 module.exports = {
 
-    entry: path.resolve(__dirname, 'src') + '/app/index.js',
+    entry: path.resolve(__dirname, 'src') + '/app/index.js', // base js file, the root component, the entry point
     output: {
-        path: path.resolve(__dirname, 'dist') + '/app',
-        filename: 'bundle.js',
-        publicPath: '/app/'
+        path: path.resolve(__dirname, 'dist') + '/app', // output dir
+        filename: 'bundle.js', // output file name
+        publicPath: '/app/' // public url for routing
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 include: path.resolve(__dirname, 'src'),
